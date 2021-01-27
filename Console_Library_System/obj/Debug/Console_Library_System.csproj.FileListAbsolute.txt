@@ -1,0 +1,7 @@
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\obj\Debug\Console_Library_System.csprojAssemblyReference.cache
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\obj\Debug\Console_Library_System.csproj.CoreCompileInputs.cache
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\bin\Debug\Console_Library_System.exe.config
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\bin\Debug\Console_Library_System.exe
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\bin\Debug\Console_Library_System.pdb
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\obj\Debug\Console_Library_System.exe
+C:\Users\otg02\source\repos\Console_Library_System\Console_Library_System\obj\Debug\Console_Library_System.pdb

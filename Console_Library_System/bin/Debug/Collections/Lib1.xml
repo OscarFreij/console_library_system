@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<library xmlns="https://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.w3schools.com ../Config/LibValidationSchema.xsd">
+    <books>  
+        <book id="0" type="manga" ISBN="">  
+            <title>A Certain Scientific Railgun Vol.2</title>  
+            <author>0</author>
+            <state>Reading</state>
+            <reads>0</reads>
+        </book>
+    </books>
+	<authors>
+		<author id="0">
+			<firstname>Kazuma</firstname>
+			<sirname>Kamachi</sirname>
+		</author>
+	</authors>
+    <config>
+        <nextBookId>1</nextBookId>
+        <nextAuthorId>1</nextAuthorId>
+    </config>
+</library>
