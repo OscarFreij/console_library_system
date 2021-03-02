@@ -100,9 +100,8 @@ namespace Console_Library_System
             public static void SaveDoc(XmlDocument doc)
             {
                 validateXML(doc);
-
-                //doc.Save(Console.Out);
-                doc.Save(Directory.GetCurrentDirectory() + "/Collections/" + LibName + ".xml");
+                var output = System.Xml.Linq.XDocument.Parse(doc.OuterXml);
+                output.Save(Directory.GetCurrentDirectory() + "/Collections/" + LibName + ".xml");
             }
         }
     }
