@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System;
+using System.Xml;
 
 namespace Console_Library_System
 {
@@ -8,7 +9,34 @@ namespace Console_Library_System
         {
             public static void Print(int id)
             {
-
+                if (id != -1)
+                {
+                    XmlNode node = LibSys.Library.booksNode.SelectSingleNode($"//LibSys:book[@id='{id}']", LibSys.Library.nsmgr);
+                    if (node == null)
+                    {
+                        Console.WriteLine("ERROR: No book with that id!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("#===#===#===#===#");
+                        Console.WriteLine(node.InnerText);
+                        Console.WriteLine("#===#===#===#===#");
+                    }
+                    return;
+                }
+                else
+                {
+                    XmlNodeList nodes = LibSys.Library.booksNode.SelectNodes($"//LibSys:book[@id]", LibSys.Library.nsmgr);
+                    Console.WriteLine("#===#===#===#===#");
+                    foreach (XmlNode node in nodes)
+                    {
+                        Console.WriteLine("¤---¤---¤---¤---¤");
+                        Console.WriteLine(node.InnerText);
+                    }
+                    Console.WriteLine("¤---¤---¤---¤---¤");
+                    Console.WriteLine("#===#===#===#===#");
+                    return;
+                }
             }
 
             public static void ChangeAtribute()
@@ -51,7 +79,7 @@ namespace Console_Library_System
                 LibSys.Library.SaveLibrary();
             }
 
-            public static void RemoveBook()
+            public static void Remove()
             {
 
             }

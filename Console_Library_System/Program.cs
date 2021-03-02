@@ -16,14 +16,12 @@ namespace Console_Library_System
 
             LibSys.Library.LoadLibrary(XML);
 
+            LibSys.Book.Print(-1);
+            LibSys.Author.Print(-1);
+
             Console.ReadKey();
-
-            LibSys.Book.Create("Test title",0,"TEST");
-
 
             LibSys.Library.SaveLibrary();
-
-            Console.ReadKey();
         }
     }
 }
