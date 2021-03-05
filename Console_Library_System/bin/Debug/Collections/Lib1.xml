@@ -7,12 +7,6 @@
       <state>Reading</state>
       <reads>0</reads>
     </book>
-    <book id="1" type="TEST" ISBN="">
-      <title>Test title</title>
-      <author>0</author>
-      <state>Not Read</state>
-      <reads>0</reads>
-    </book>
   </books>
   <authors>
     <author id="0">
@@ -21,7 +15,7 @@
     </author>
   </authors>
   <config>
-    <nextBookId>2</nextBookId>
+    <nextBookId>1</nextBookId>
     <nextAuthorId>1</nextAuthorId>
   </config>
 </library>

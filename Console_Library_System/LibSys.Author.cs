@@ -19,7 +19,10 @@ namespace Console_Library_System
                     else
                     {
                         Console.WriteLine("#===#===#===#===#");
-                        Console.WriteLine(node.InnerText);
+                        foreach (XmlNode subNode in node.ChildNodes)
+                        {
+                            Console.WriteLine(subNode.Name + " | " + subNode.InnerText);
+                        }
                         Console.WriteLine("#===#===#===#===#");
                     }
                     return;
@@ -31,13 +34,15 @@ namespace Console_Library_System
                     foreach (XmlNode node in nodes)
                     {
                         Console.WriteLine("¤---¤---¤---¤---¤");
-                        Console.WriteLine(node.InnerText);
+                        foreach (XmlNode subNode in node.ChildNodes)
+                        {
+                            Console.WriteLine(subNode.Name + " | " + subNode.InnerText);
+                        }
                     }
                     Console.WriteLine("¤---¤---¤---¤---¤");
                     Console.WriteLine("#===#===#===#===#");
                     return;
                 }
-                
             }
 
             public static void ChangeAtribute()
@@ -65,9 +70,19 @@ namespace Console_Library_System
                 LibSys.Library.SaveLibrary();
             }
 
-            public static void Remove()
+            public static void Remove(int id)
             {
+                XmlNode node = LibSys.Library.authorsNode.SelectSingleNode($"//LibSys:author[@id='{id}']", LibSys.Library.nsmgr);
 
+                if (node != null)
+                {
+                    LibSys.Library.authorsNode.RemoveChild(node);
+                    LibSys.Library.SaveLibrary();
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: node with id of " + id + " not found i xml");
+                }
             }
         }
     }

@@ -17,6 +17,7 @@ namespace Console_Library_System
             LibSys.Library.LoadLibrary(XML);
 
             LibSys.Book.Print(-1);
+            Console.WriteLine();
             LibSys.Author.Print(-1);
 
             Console.ReadKey();

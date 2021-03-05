@@ -19,7 +19,10 @@ namespace Console_Library_System
                     else
                     {
                         Console.WriteLine("#===#===#===#===#");
-                        Console.WriteLine(node.InnerText);
+                        foreach (XmlNode subNode in node.ChildNodes)
+                        {
+                            Console.WriteLine(subNode.Name + " | " + subNode.InnerText);
+                        }
                         Console.WriteLine("#===#===#===#===#");
                     }
                     return;
@@ -31,7 +34,10 @@ namespace Console_Library_System
                     foreach (XmlNode node in nodes)
                     {
                         Console.WriteLine("¤---¤---¤---¤---¤");
-                        Console.WriteLine(node.InnerText);
+                        foreach (XmlNode subNode in node.ChildNodes)
+                        {
+                            Console.WriteLine(subNode.Name + " | " + subNode.InnerText);
+                        }
                     }
                     Console.WriteLine("¤---¤---¤---¤---¤");
                     Console.WriteLine("#===#===#===#===#");
@@ -39,9 +45,9 @@ namespace Console_Library_System
                 }
             }
 
-            public static void ChangeAtribute()
+            public static void ChangeAtribute(int id)
             {
-
+                XmlNode node = LibSys.Library.booksNode.SelectSingleNode($"//LibSys:book[@id='{id}']", LibSys.Library.nsmgr);
             }
 
             public static void Create(string title, int authorId, string type = "unknown", string ISBN = "")
@@ -79,9 +85,20 @@ namespace Console_Library_System
                 LibSys.Library.SaveLibrary();
             }
 
-            public static void Remove()
+            public static void Remove(int id)
             {
 
+                XmlNode node = LibSys.Library.booksNode.SelectSingleNode($"//LibSys:book[@id='{id}']", LibSys.Library.nsmgr);
+                
+                if (node != null)
+                {
+                    LibSys.Library.booksNode.RemoveChild(node);
+                    LibSys.Library.SaveLibrary();
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: node with id of " + id + " not found i xml");
+                }
             }
         }
     }

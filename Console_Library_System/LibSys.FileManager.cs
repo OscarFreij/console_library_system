@@ -50,7 +50,7 @@ namespace Console_Library_System
                 }
 
                 XmlDocument doc = new XmlDocument();
-                doc.PreserveWhitespace = true;
+                doc.PreserveWhitespace = false;
                 doc.Load(reader);
                 reader.Close();
 
