@@ -45,9 +45,17 @@ namespace Console_Library_System
                 }
             }
 
-            public static void ChangeAtribute(int id)
+            public static void ChangeValue(int id, string valueName, string newValue)
             {
-                XmlNode node = LibSys.Library.booksNode.SelectSingleNode($"//LibSys:book[@id='{id}']", LibSys.Library.nsmgr);
+                try
+                {
+                    XmlNode valueNode = LibSys.Library.booksNode.SelectSingleNode($"//LibSys:book[@id='{id}']/LibSys:{valueName}", LibSys.Library.nsmgr);
+                    valueNode.InnerText = newValue;
+                }
+                catch
+                {
+                    Console.WriteLine("ERROR: Failed to change value!");
+                }
             }
 
             public static void Create(string title, int authorId, string type = "unknown", string ISBN = "")

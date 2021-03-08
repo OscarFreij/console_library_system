@@ -48,6 +48,7 @@
     <Compile Include="LibSys.ConfigManager.cs" />
     <Compile Include="LibSys.cs" />
     <Compile Include="LibSys.FileManager.cs" />
+    <Compile Include="LibSys.Functions.cs" />
     <Compile Include="LibSys.Library.cs" />
     <Compile Include="LibSys.ReturnCodes.cs" />
     <Compile Include="Program.cs" />

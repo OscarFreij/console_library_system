@@ -45,9 +45,17 @@ namespace Console_Library_System
                 }
             }
 
-            public static void ChangeAtribute()
+            public static void ChangeValue(int id, string valueName, string newValue)
             {
+                try
+                {
+                    XmlNode valueNode = LibSys.Library.authorsNode.SelectSingleNode($"//LibSys:author[@id='{id}']/LibSys:{valueName}", LibSys.Library.nsmgr);
+                    valueNode.InnerText = newValue;
+                }
+                catch
+                {
 
+                }
             }
 
             public static void Create(string firstname, string sirname)
