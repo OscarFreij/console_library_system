@@ -18,29 +18,32 @@ namespace Console_Library_System
                     }
                     else
                     {
-                        Console.WriteLine("#===#===#===#===#");
+                        Console.WriteLine(LibSys.Functions.RowDivider('@', '#', '@'));
                         foreach (XmlNode subNode in node.ChildNodes)
                         {
-                            Console.WriteLine(subNode.Name + " | " + subNode.InnerText);
+                            Console.WriteLine(subNode.Name + " : " + subNode.InnerText);
                         }
-                        Console.WriteLine("#===#===#===#===#");
+                        Console.WriteLine(LibSys.Functions.RowDivider('@', '#', '@'));
                     }
                     return;
                 }
                 else
                 {
                     XmlNodeList nodes = LibSys.Library.authorsNode.SelectNodes($"//LibSys:author[@id]", LibSys.Library.nsmgr);
-                    Console.WriteLine("#===#===#===#===#");
+                    Console.WriteLine(LibSys.Functions.RowDivider('@', '#', '@'));
                     foreach (XmlNode node in nodes)
                     {
-                        Console.WriteLine("¤---¤---¤---¤---¤");
+                        if (node != nodes[0])
+                        {
+                            Console.WriteLine(LibSys.Functions.RowDivider('=', '-', '='));
+                        }
+
                         foreach (XmlNode subNode in node.ChildNodes)
                         {
-                            Console.WriteLine(subNode.Name + " | " + subNode.InnerText);
+                            Console.WriteLine(subNode.Name + " : " + subNode.InnerText);
                         }
                     }
-                    Console.WriteLine("¤---¤---¤---¤---¤");
-                    Console.WriteLine("#===#===#===#===#");
+                    Console.WriteLine(LibSys.Functions.RowDivider('@', '#', '@'));
                     return;
                 }
             }
@@ -54,7 +57,7 @@ namespace Console_Library_System
                 }
                 catch
                 {
-
+                    Console.WriteLine("ERROR: Failed to change value!");
                 }
             }
 

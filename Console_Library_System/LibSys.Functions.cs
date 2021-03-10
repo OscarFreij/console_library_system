@@ -10,7 +10,21 @@ namespace Console_Library_System
     {
         public static class Functions
         {
+            public static string RowDivider(char startChar, char fillChar, char endChar)
+            {
+                string divider = "";
 
+                divider += startChar;
+
+                for (int i = 1; i < Console.WindowWidth - 2; i++)
+                {
+                    divider += fillChar;
+                }
+
+                divider += endChar;
+                
+                return divider;
+            }
         }
     }
 }

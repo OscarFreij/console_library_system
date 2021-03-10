@@ -2,7 +2,19 @@
 <library xmlns="https://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.w3schools.com ../Config/LibValidationSchema.xsd">
   <books>
     <book id="0" type="manga" ISBN="">
+      <title>A Certain Scientific Railgun Vol.1</title>
+      <author>0</author>
+      <state>Done</state>
+      <reads>1</reads>
+    </book>
+    <book id="1" type="manga" ISBN="">
       <title>A Certain Scientific Railgun Vol.2</title>
+      <author>0</author>
+      <state>Done</state>
+      <reads>1</reads>
+    </book>
+    <book id="2" type="manga" ISBN="">
+      <title>A Certain Scientific Railgun Vol.3</title>
       <author>0</author>
       <state>Reading</state>
       <reads>0</reads>
